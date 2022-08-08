@@ -34,6 +34,10 @@ sup {
   text-align: center;
 }
 
+#image {
+  text-align: center;
+}
+
 #loading {
   display: inline-block;
   width: 20px;
@@ -50,6 +54,27 @@ sup {
 }
 @-webkit-keyframes spin {
   to { -webkit-transform: rotate(360deg); }
+}
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.progress-bar {
+  width: 100%;
+  border: 1px solid black;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.progress-bar-fill {
+  display: block;
+  width: 0%;
+  height: 22px;
+  background-color: #60c642;
+  border-radius: 3px;
+  transition: width 500ms ease-in-out;
 }
 
 footer {

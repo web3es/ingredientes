@@ -1,6 +1,9 @@
 const file = document.getElementById("file");
 const ingredients = document.getElementById("ingredients");
 const loading = document.getElementById("loading");
+const progressBar = document.getElementById("progressBar");
+const progress = document.getElementById("progress");
+
 const lang = "spa";
 
 const eNumbers = [];
@@ -70,7 +73,7 @@ file.addEventListener("change", function (e) {
 });
 
 function logFile(event) {
-  loading.className = '';
+  loading.className = "";
   let str = event.target.result;
   let img = document.createElement("img");
   img.width = 300;
@@ -84,13 +87,13 @@ function processImage(image) {
   worker
     .recognize(image, lang)
     .progress(function (packet) {
+      progressBar.classList.remove("hide");
       if (packet.status == "recognizing text") {
-        ingredients.innerText = `Cargando... (${Math.round(
-          packet.progress * 100
-        )}%)`;
+        progress.style.width = `${Math.round(packet.progress * 100)}%`;
       }
     })
     .then(function (data) {
+      progressBar.classList.add("hide");
       ingredients.innerText = "";
 
       let text = data.text;
@@ -119,7 +122,7 @@ function processImage(image) {
         }
       });
 
-      loading.className = 'hide';
+      loading.className = "hide";
 
       arrIngredients.map(function (i) {
         ingredients.innerHTML += `<li>${i}</li>`;
