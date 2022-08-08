@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJQNWEZE1C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-VJQNWEZE1C');
+    </script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VeganScan</title>
+    <title>🌱 VeganScan</title>
     <script src="https://unpkg.com/tesseract.js@v2.0.0-alpha.13/dist/tesseract.min.js"></script>
     <link rel="stylesheet" href="min.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav class="nav" tabindex="-1" onclick="this.focus()">
-      <div class="container">
-        <a class="pagename current" href="/">VeganScan (beta)</a>
-        <a href="/porque.html">¿Por qué?</a>
-        <a href="/veganismo.html">Veganismo</a>
-        <a href="/donaciones.html">Donaciones</a>
-      </div>
-    </nav>
-    <button class="btn-close btn btn-sm">×</button>
-    <div class="container">
+    <header>
+      <nav class="nav" tabindex="-1" onclick="this.focus()">
+        <div class="container">
+          <a class="pagename current" href="/">🌱 VeganScan <sup>beta</sup></a>
+          <a href="/porque.html">¿Por qué?</a>
+          <a href="/veganismo.html">Veganismo</a>
+          <a href="/donaciones.html">Donaciones</a>
+        </div>
+      </nav>
+      <button class="btn-close btn btn-sm">×</button>
+    </header>
+    <main class="container">
       <div class="hero">
         <p>
           <h4>Sacá o subí la foto de los ingredientes que querés comprobar:</h4>
-          <h5>Tené en cuenta que las palabras se lean bien, tengan buen foco y que la foto esté lo más derecha posible</h5>
+          <h5>💡 Las palabras deben leerse bien. La foto debe tener buen foco y estar lo más derecha posible.</h5>
           <input type="file" capture="user" accept="image/*" id="file" />
         </p>
       </div>
@@ -35,7 +46,8 @@
           <ul id="ingredients"></ul>
         </div>
       </div>
-    </div>
+    </main>
+    <footer>Hecho con 💚 por <a href="https://www.twitter.com/mmednik" target="_blank">mmednik</a></footer>
     <script src="script.js"></script>
   </body>
 </html>

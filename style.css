@@ -1,9 +1,17 @@
+sup {
+  font-size: 0.75rem;
+}
+
 .danger {
   color: red;
 }
 
 .success {
   color: green;
+}
+
+.nav a.pagename {
+  color: white;
 }
 
 .hero {
@@ -18,16 +26,12 @@
   margin-bottom: 0.3em;
 }
 
-.c4 {
-  padding: 10px;
-  box-sizing: border-box;
+footer {
+  text-align: center;
+  font-size: 0.8rem;
 }
 
-.c4 h3 {
-  margin-top: 0;
-}
-
-.c4 a {
-  margin-top: 10px;
-  display: inline-block;
+footer a {
+  color: black;
+  font-weight: 700;
 }
