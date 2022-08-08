@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ingredientes</title>
+    <title>VeganScan</title>
     <script src="https://unpkg.com/tesseract.js@v2.0.0-alpha.13/dist/tesseract.min.js"></script>
     <link rel="stylesheet" href="min.css" />
     <link rel="stylesheet" href="style.css" />
@@ -12,16 +12,18 @@
   <body>
     <nav class="nav" tabindex="-1" onclick="this.focus()">
       <div class="container">
-        <a class="pagename current" href="#">VeganScan</a>
-        <a href="#">¿Por qué?</a>
-        <a href="#">Veganismo</a>
-        <a href="#">Donaciones</a>
+        <a class="pagename current" href="/">VeganScan (beta)</a>
+        <a href="/porque.html">¿Por qué?</a>
+        <a href="/veganismo.html">Veganismo</a>
+        <a href="/donaciones.html">Donaciones</a>
       </div>
     </nav>
     <button class="btn-close btn btn-sm">×</button>
     <div class="container">
       <div class="hero">
         <p>
+          <h4>Sacá o subí la foto de los ingredientes que querés comprobar:</h4>
+          <h5>Tené en cuenta que las palabras se lean bien, tengan buen foco y que la foto esté lo más derecha posible</h5>
           <input type="file" capture="user" accept="image/*" id="file" />
         </p>
       </div>
@@ -34,7 +36,6 @@
         </div>
       </div>
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>
