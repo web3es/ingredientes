@@ -6,6 +6,9 @@ const progress = document.getElementById("progress");
 
 const lang = "spa";
 
+const regex_simple = new RegExp("INS");
+const regex_parenthesis = new RegExp("\\(INS");
+
 const eNumbers = [];
 eNumbers["120"] = "no es apto";
 eNumbers["441"] = "no es apto";
@@ -104,28 +107,38 @@ function processImage(image) {
       text = text.replace(".", "");
 
       text.split(",").map(function (i) {
+        let isINS = false;
         let cleanIngredient = i.trim();
         cleanIngredient = cleanIngredient.replace("\n", "");
         cleanIngredient = cleanIngredient.replace("-", "");
 
-        cleanIngredient = cleanIngredient.split("(E")[1]; // OR INS
-        if (cleanIngredient) {
+        if (regex_simple.test(cleanIngredient)) {
+          cleanIngredient = cleanIngredient.split("INS")[1];
+          isINS = true;
+        } else if (regex_parenthesis.test(cleanIngredient)) {
+          cleanIngredient = cleanIngredient.split("(INS")[1];
           cleanIngredient = cleanIngredient.split(")")[0];
+          isINS = true;
+        }
 
+        if (isINS) {
           if (eNumbers[cleanIngredient] !== undefined) {
             cleanIngredient = `${cleanIngredient} <span class="danger">${eNumbers[cleanIngredient]}</span>`;
           } else {
             cleanIngredient = `${cleanIngredient} <span class="success">es apto</span>`;
           }
-
           arrIngredients.push(cleanIngredient);
         }
       });
 
       loading.className = "hide";
 
-      arrIngredients.map(function (i) {
-        ingredients.innerHTML += `<li>${i}</li>`;
-      });
+      if (arrIngredients.length > 0) {
+        arrIngredients.map(function (i) {
+          ingredients.innerHTML += `<li>${i}</li>`;
+        });
+      } else {
+        ingredients.innerHTML = '<span>No se encontraron INS en este producto.</span>'
+      }
     });
 }
