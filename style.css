@@ -2,9 +2,19 @@ sup {
   font-size: 0.75rem;
 }
 
+p {
+  line-height: 1.5rem;
+}
+
 ul {
   list-style: none;
   font-size: 1.5rem;
+}
+
+a {
+  color: black;
+  font-weight: 700;
+  margin: 20px 0;
 }
 
 .hide {
@@ -90,10 +100,4 @@ ul {
 footer {
   text-align: center;
   font-size: 0.8rem;
-}
-
-footer a {
-  color: black;
-  font-weight: 700;
-  margin: 20px 0;
 }
