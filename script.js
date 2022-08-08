@@ -1,5 +1,6 @@
 const file = document.getElementById("file");
 const ingredients = document.getElementById("ingredients");
+const loading = document.getElementById("loading");
 const lang = "spa";
 
 const eNumbers = [];
@@ -69,6 +70,7 @@ file.addEventListener("change", function (e) {
 });
 
 function logFile(event) {
+  loading.className = '';
   let str = event.target.result;
   let img = document.createElement("img");
   img.width = 300;
@@ -116,6 +118,8 @@ function processImage(image) {
           arrIngredients.push(cleanIngredient);
         }
       });
+
+      loading.className = 'hide';
 
       arrIngredients.map(function (i) {
         ingredients.innerHTML += `<li>${i}</li>`;
