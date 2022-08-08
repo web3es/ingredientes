@@ -3,6 +3,7 @@ const ingredients = document.getElementById("ingredients");
 const loading = document.getElementById("loading");
 const progressBar = document.getElementById("progressBar");
 const progress = document.getElementById("progress");
+const confidence = document.getElementById("confidence");
 
 const lang = "spa";
 
@@ -100,6 +101,8 @@ function processImage(image) {
       ingredients.innerText = "";
 
       let text = data.text;
+      let confidenceValue = data.confidence;
+
       let arrIngredients = [];
 
       text = text.replace("Ingredientes", "");
@@ -112,12 +115,12 @@ function processImage(image) {
         cleanIngredient = cleanIngredient.replace("\n", "");
         cleanIngredient = cleanIngredient.replace("-", "");
 
-        if (regex_simple.test(cleanIngredient)) {
-          cleanIngredient = cleanIngredient.split("INS")[1];
-          isINS = true;
-        } else if (regex_parenthesis.test(cleanIngredient)) {
+        if (regex_parenthesis.test(cleanIngredient)) {
           cleanIngredient = cleanIngredient.split("(INS")[1];
           cleanIngredient = cleanIngredient.split(")")[0];
+          isINS = true;
+        } else if (regex_simple.test(cleanIngredient)) {
+          cleanIngredient = cleanIngredient.split("INS")[1];
           isINS = true;
         }
 
@@ -140,5 +143,8 @@ function processImage(image) {
       } else {
         ingredients.innerHTML = '<span>No se encontraron INS en este producto.</span>'
       }
+
+      confidence.innerHTML = `Aclaración: La lectura de esta imagen tiene una confianza del <strong>${confidenceValue}%</strong>`;
+
     });
 }
