@@ -9,6 +9,8 @@ p {
 ul {
   list-style: none;
   font-size: 1.5rem;
+  padding: 0;
+  text-align: center;
 }
 
 a {
@@ -105,8 +107,9 @@ h3 {
 }
 
 #confidence {
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   text-align: center;
+  font-style: italic;
 }
 
 footer {
