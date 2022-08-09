@@ -144,7 +144,7 @@ function processImage(image) {
         ingredients.innerHTML = '<span>No se encontraron INS en este producto.</span>'
       }
 
-      confidence.innerHTML = `Aclaración: La lectura de esta imagen tiene una confianza del <strong>${confidenceValue}%</strong>`;
+      confidence.innerHTML = `Aclaración: La lectura de esta imagen tiene una precisión del <strong>${confidenceValue}%</strong>`;
 
     });
 }
