@@ -18,7 +18,7 @@
     <meta name="description" content="VeganScan te permite conocer los aditivos aptos vegano en los alimentos en Argentina.
     Escaneá los ingredientes de un producto y detectá los INS apto vegan." />
     <meta name="keywords" content="vegan, vegano, vegana, veggie, ins, INS, aditivos, apto, apto+vegan, apto+vegano" />
-    <title>VeganScan - Conocé si los INS son aptos</title>
+    <title>VeganScan - Escáner de INS - Conocé si los INS son aptos</title>
     <script src="https://unpkg.com/tesseract.js@v2.0.0-alpha.13/dist/tesseract.min.js"></script>
     <link rel="stylesheet" href="min.css" />
     <link rel="stylesheet" href="style.css" />
@@ -27,8 +27,8 @@
     <header>
       <nav class="nav" tabindex="-1" onclick="this.focus()">
         <div class="container">
-          <a class="pagename current" href="/">🌱 VeganScan <sup>beta</sup></a>
-          <a href="/escaner-de-ins.html">Escáner de INS</a>
+          <a class="pagename" href="/">🌱 VeganScan <sup>beta</sup></a>
+          <a class="current" href="/escaner-de-ins.html">Escáner de INS</a>
           <a href="/buscador-de-ins.html">Buscador de INS</a>
           <a href="/porque.html">¿Por qué?</a>
           <a href="/veganismo.html">Veganismo</a>
@@ -37,19 +37,42 @@
       </nav>
       <button class="btn-close btn btn-sm">×</button>
     </header>
-    <main class="container home">
+    <main class="container">
       <div class="hero">
         <p>
-          <h1>VeganScan</h1>
-          <h2>Conocé si los INS son aptos</h2>
+          <h1>Comprobá si los INS de un producto son aptos</h1>
+          <h2>Sacá o subí una foto de los ingredientes que querés comprobar:</h2>
+          <input type="file" capture="environment" accept="image/*" id="file" />
+          <h3>💡 Las palabras deben leerse bien. La foto debe tener buen foco y estar lo más derecha posible.</h3>
         </p>
       </div>
       <div class="row">
         <div class="col c6">
-          <a class="btn btn-a" href="/escaner-de-ins.html">📟 Escáner de INS</a>
+          <div id="image"></div>
         </div>
         <div class="col c6">
-          <a  class="btn btn-b" href="/buscador-de-ins.html">🔬 Buscador de INS</a>
+          <div class="loading-container">
+            <div id="loading" class="hide"></div>
+          </div>
+          <div class="wrapper hide" id="progressBar">
+            <div class="progress-bar">
+              <span class="progress-bar-fill" id="progress"></span>
+            </div>
+          </div>
+          <ul id="ingredients"></ul>
+          <p id="confidence"></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col c12">
+          <h3>¿Cómo interpretar los resultados?</h3>
+          <p>Esta app utiliza una solución automatizada para detectar palabras en una foto. Según la calidad de la foto, las palabras
+          serán detectadas con mayor o menor precisión. Por lo que te recomendamos interpretar los resultados de esta app de forma
+          orientativa, revisando siempre el porcentaje de precisión que te mostraremos al final del análisis.</p>
+          <p>También, tené en cuenta que hay aditivos (INS) dudosos, que pueden o no ser aptos vegan. Y eso dependerá de cada 
+          fabricante. La app en estos casos siempre indicará que el INS es dudoso.</p>
+          <p>Si tenés alguna duda, comentario o sugerencia, te invito a que me
+          <a href="mailto:mmednik@gmail.com?subject=VeganScan - Contacto">escribas</a>.</p>
         </div>
       </div>
     </main>

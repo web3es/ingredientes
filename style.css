@@ -116,3 +116,8 @@ footer {
   text-align: center;
   font-size: 0.8rem;
 }
+
+main.home .btn {
+  width: 84%;
+  text-align: center;
+}
