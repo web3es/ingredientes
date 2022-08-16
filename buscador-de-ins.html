@@ -37,46 +37,26 @@
       </nav>
       <button class="btn-close btn btn-sm">×</button>
     </header>
-    <main class="container">
+    <main class="container buscador">
       <div class="hero">
         <p>
-          <h1>Comprobá si los INS de un producto son aptos</h1>
-          <h2>Sacá o subí una foto de los ingredientes que querés comprobar:</h2>
-          <input type="file" capture="environment" accept="image/*" id="file" />
-          <h3>💡 Las palabras deben leerse bien. La foto debe tener buen foco y estar lo más derecha posible.</h3>
+          <h1>Buscador de INS</h1>
+          <h2>Comprobá si el aditivo es apto vegan:</h2>
         </p>
-      </div>
-      <div class="row">
-        <div class="col c6">
-          <div id="image"></div>
-        </div>
-        <div class="col c6">
-          <div class="loading-container">
-            <div id="loading" class="hide"></div>
+        <div class="row">
+          <div class="col c6">
+            <form id="search-form">
+              <input type="number" id="ins" />
+              <input type="submit" class="button" value="Comprobar" />
+            </form>
           </div>
-          <div class="wrapper hide" id="progressBar">
-            <div class="progress-bar">
-              <span class="progress-bar-fill" id="progress"></span>
-            </div>
+          <div class="col c6">
+            <p id="search-result"></p>
           </div>
-          <ul id="ingredients"></ul>
-          <p id="confidence"></p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col c12">
-          <h3>¿Cómo interpretar los resultados?</h3>
-          <p>Esta app utiliza una solución automatizada para detectar palabras en una foto. Según la calidad de la foto, las palabras
-          serán detectadas con mayor o menor precisión. Por lo que te recomendamos interpretar los resultados de esta app de forma
-          orientativa, revisando siempre el porcentaje de precisión que te mostraremos al final del análisis.</p>
-          <p>También, tené en cuenta que hay aditivos (INS) dudosos, que pueden o no ser aptos vegan. Y eso dependerá de cada 
-          fabricante. La app en estos casos siempre indicará que el INS es dudoso.</p>
-          <p>Si tenés alguna duda, comentario o sugerencia, te invito a que me
-          <a href="mailto:mmednik@gmail.com?subject=VeganScan - Contacto">escribas</a>.</p>
         </div>
       </div>
     </main>
     <footer>Hecho con 💚 por <a href="https://www.twitter.com/mmednik" target="_blank">mmednik</a> para les veganes en 🇦🇷</footer>
-    <script src="script.js"></script>
+    <script src="buscador-de-ins.js"></script>
   </body>
 </html>
